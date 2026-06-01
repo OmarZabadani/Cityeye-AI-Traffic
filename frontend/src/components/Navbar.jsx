@@ -42,6 +42,11 @@ export default function Navbar() {
             <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[color:var(--text-muted)]">
               Traffic Intel · v1
             </div>
+            <div>
+              <div className="text-[10px] font-mono uppercase tracking-[0.16em] text-[color:var(--text-muted)]">
+                {user && user !== false ? roleMeta[user.role]?.label || user.role : "Guest"}
+              </div>
+            </div>
           </div>
         </Link>
 

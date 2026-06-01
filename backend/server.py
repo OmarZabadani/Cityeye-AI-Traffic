@@ -35,6 +35,7 @@ for d in (UPLOAD_DIR, ORIG_DIR, ANNOT_DIR):
 mongo_url = os.environ["MONGO_URL"]
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ["DB_NAME"]]
+traffic_lights_collection = db["traffic_lights"]
 
 JWT_ALGORITHM = "HS256"
 JWT_SECRET = os.environ["JWT_SECRET"]
@@ -108,6 +109,7 @@ def require_roles(*roles: str):
             raise HTTPException(status_code=403, detail="Insufficient role")
         return user
     return checker
+
 
 # ---------- Models ----------
 class RegisterIn(BaseModel):
