@@ -24,8 +24,7 @@ Install these on your machine first:
 ## 2. Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+git clone https://github.com/OmarZabadani/Cityeye-AI-Traffic
 ```
 
 ---
@@ -39,12 +38,8 @@ mongod --dbpath /path/to/your/data/folder
 
 **Option B — Docker (easiest):**
 ```bash
-docker run -d --name city-eye-mongo -p 27017:27017 mongo:6
+docker start  cityeye-mongo
 ```
-
-**Option C — MongoDB Atlas:**
-Create a free cluster and copy the connection string — you'll paste it into `backend/.env` in the next step.
-
 ---
 
 ## 4. Backend setup (FastAPI + YOLOv8)
@@ -119,21 +114,7 @@ Frontend is now live at **http://localhost:3000**.
 
 ---
 
-## 6. First login
-
-A demo **Analyzer** account is seeded automatically on first backend start:
-
-```
-Email:    admin@cityeye.io
-Password: admin123
-Role:     analyzer
-```
-
-Or register fresh accounts at `/register` and pick a role: **Citizen**, **Police Officer**, or **Analyzer**.
-
----
-
-## 7. Using the app
+## 6. Using the app
 
 1. Go to `/analyze`
 2. Drop a **traffic image** (jpg/png) or a short **video clip** (mp4/webm)
@@ -143,7 +124,7 @@ Or register fresh accounts at `/register` and pick a role: **Citizen**, **Police
 
 ---
 
-## 8. Project structure
+## 7. Project structure
 
 ```
 .
@@ -166,7 +147,7 @@ Or register fresh accounts at `/register` and pick a role: **Citizen**, **Police
 
 ---
 
-## 9. Troubleshooting
+## 8. Troubleshooting
 
 | Symptom                                           | Fix                                                                                                          |
 | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
@@ -179,7 +160,7 @@ Or register fresh accounts at `/register` and pick a role: **Citizen**, **Police
 
 ---
 
-## 10. Quick start cheat-sheet (tl;dr)
+## 9. Quick start cheat-sheet (tl;dr)
 
 ```bash
 # terminal 1 — mongo
